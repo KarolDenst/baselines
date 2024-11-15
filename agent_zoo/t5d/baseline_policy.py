@@ -83,6 +83,7 @@ class Baseline(pufferlib.models.Policy):
         print(f"hidden: {hidden.shape}")
         print(f"lookup1: {lookup[0].shape}")
         print(f"lookup2: {lookup[1].shape}")
+        raise NotImplementedError
         actions = self.action_decoder(hidden, lookup)
         value = self.value_head(hidden)
         return actions, value
