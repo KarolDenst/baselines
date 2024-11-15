@@ -40,7 +40,8 @@ class Baseline(pufferlib.models.Policy):
     def encode_observations(self, flat_observations):
         print(f"flat_observations: {flat_observations.shape}")
         env_outputs = unpack_batched_obs(flat_observations, self.unflatten_context)
-        print(env_outputs)
+        for k, v in env_outputs.items():
+            print(f"{k}: {v.shape}")
         tile = self.tile_encoder(env_outputs["Tile"])
         player_embeddings, my_agent = self.player_encoder(
             env_outputs["Entity"], env_outputs["AgentId"][:, 0]
