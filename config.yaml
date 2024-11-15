@@ -99,6 +99,11 @@ reward_wrapper:
   eval_mode: False
   early_stop_agent_num: 8
   use_custom_reward: True
+  
+best_agent:
+  eval_mode: False
+  early_stop_agent_num: 8
+  use_custom_reward: True
 
 neurips23_start_kit:
   reward_wrapper:
