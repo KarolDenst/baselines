@@ -50,7 +50,7 @@ class Baseline(pufferlib.models.Policy):
                     if isinstance(v2, torch.Tensor):
                         print(f"  {k2}: {v2.shape}")
                     else:
-                        print(f"{k2}")
+                        print(f"{k2}: {type(v2)}")
 
         tile = self.tile_encoder(env_outputs["Tile"])
         player_embeddings, my_agent = self.player_encoder(
