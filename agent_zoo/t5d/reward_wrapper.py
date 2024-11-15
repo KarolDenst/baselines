@@ -112,9 +112,9 @@ class RewardWrapper(BaseStatWrapper):
     def reward_terminated_truncated_info(self, agent_id, reward, terminated, truncated, info):
         agent = self.env.realm.players[agent_id]
         for resource in self.data:
-            reward += (
-                getattr(agent.resources, resource).val - self.data[resource]
-            ) * self.bonus_weights[resource]
-            self.data[resource] = getattr(agent.resources, resource).val
+            reward += (getattr(agent, resource).val - self.data[resource]) * self.bonus_weights[
+                resource
+            ]
+            self.data[resource] = getattr(agent, resource).val
 
         return reward, terminated, truncated, info
