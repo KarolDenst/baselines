@@ -79,7 +79,7 @@ class Baseline(pufferlib.models.Policy):
 
     def decode_actions(self, hidden, lookup):
         print(f"hidden: {hidden.shape}")
-        print(f"lookup: {lookup.shape}")
+        print(f"lookup: {lookup}")
         actions = self.action_decoder(hidden, lookup)
         value = self.value_head(hidden)
         return actions, value
