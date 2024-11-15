@@ -100,10 +100,22 @@ reward_wrapper:
   early_stop_agent_num: 8
   use_custom_reward: True
   
-best_agent:
+t5d:
   eval_mode: False
   early_stop_agent_num: 8
   use_custom_reward: True
+  health_bonus_weight: 0.01
+  water_bonus_weight: 0.01
+  food_bonus_weight: 0.01
+  gold_bonus_weight: 0.01
+  meele_exp_bonus_weight: 0.01
+  mage_exp_bonus_weight: 0.01
+  range_exp_bonus_weight: 0.01
+  fishing_exp_bonus_weight: 0.01
+  herbalism_exp_bonus_weight: 0.01
+  prospecting_exp_bonus_weight: 0.01
+  carving_exp_bonus_weight: 0.01
+  alchemy_exp_bonus_weight: 0.01
 
 neurips23_start_kit:
   reward_wrapper:
