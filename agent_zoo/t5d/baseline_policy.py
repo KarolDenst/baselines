@@ -38,6 +38,7 @@ class Baseline(pufferlib.models.Policy):
         self.value_head = torch.nn.Linear(hidden_size, 1)
 
     def encode_observations(self, flat_observations):
+        print(f"flat_observations: {flat_observations.shape}")
         env_outputs = unpack_batched_obs(flat_observations, self.unflatten_context)
         tile = self.tile_encoder(env_outputs["Tile"])
         player_embeddings, my_agent = self.player_encoder(
@@ -77,6 +78,8 @@ class Baseline(pufferlib.models.Policy):
         )
 
     def decode_actions(self, hidden, lookup):
+        print(f"hidden: {hidden.shape}")
+        print(f"lookup: {lookup.shape}")
         actions = self.action_decoder(hidden, lookup)
         value = self.value_head(hidden)
         return actions, value
